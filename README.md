@@ -1,6 +1,6 @@
-# 💻 Programación Orientada a Objetos (POO) con Python
+# 💻 Programación Orientada a Objetos con Python
 
-![meme](.img/meme2.png)
+<kbd><img src="./img/meme2.png" style="border:1px solid grey"></kbd>
 
 
 ## 🔍 Índice
@@ -19,9 +19,12 @@
 *   [🎯 Conclusión](#conclusion)
 *   [🛠️ Taller](#taller)
 
-## ✨ Introducción {#introduccion}
+## ✨ Introducción 
 
 La **Programación Orientada a Objetos (POO)** es un paradigma que estructura el código en "objetos", los cuales combinan **datos** (atributos) y **acciones** (métodos). Permite modelar el mundo real de manera intuitiva, mejorando la reutilización, el mantenimiento y la escalabilidad del software. Este enfoque facilita la reutilización, el mantenimiento y la escalabilidad del software.
+
+
+<kbd><img src="./img/molde.png" style="border:1px solid grey"></kbd>
 
 Ejemplo:
   - **Clase:** "El plano de la casa (Molde para crear objetos)"
@@ -35,18 +38,16 @@ Python es multiparadigma: funcional, orientado a eventos, orientado a objetos. A
 
 Además, es un lenguaje interpretado y dinámico, lo que permite modificar objetos en tiempo de ejecución sin necesidad de compilación previa.
 
+> [!TIP]
+> 🚨 ¿Qué característica distingue a Python como un lenguaje dinámico e interpretado?
 
-¿Qué característica distingue a Python como un lenguaje dinámico e interpretado?
+>- 🔵 Permite modificar objetos en tiempo de ejecución sin necesidad de compilación previa.
+>- 🔴 Requiere compilar el código antes de ejecutarlo, como en C o Java.
+>- 🟢 No permite cambiar los atributos de los objetos una vez creados.
 
-🔵 Permite modificar objetos en tiempo de ejecución sin necesidad de compilación previa.
-🔴 Requiere compilar el código antes de ejecutarlo, como en C o Java.
-🟢 No permite cambiar los atributos de los objetos una vez creados.
+## 🔬 Conceptos Fundamentales 
 
----
-
-## 🔬 Conceptos Fundamentales {#conceptos-fundamentales}
-
-  ### 🏷️ Clases {#clases}
+  ### 🏷️ Clases
 
 En Python, una clase es una plantilla para crear objetos. Define las propiedades (atributos) y las acciones (métodos) que los objetos tendrán.
 
@@ -77,7 +78,7 @@ print(a == b)  # False (son objetos distintos en memoria)
 a.age = 10
 ```
 
-También es importante diferencias tipos de clases,
+También es importante diferencias tipos de clases:
 
 | **Tipo de Clase**            | **Descripción**                                         |
 |-----------------------------|-----------------------------------------------------|
@@ -87,8 +88,9 @@ También es importante diferencias tipos de clases,
 | **Clases Finales (`@final`)** | No permiten herencia.                              |
 | **Clases Singleton**        | Garantizan una única instancia en todo el programa. |
 
+Ejemplos:
 
-- Abstractas: Son clases que no pueden ser instanciadas directamente y sirven como plantilla para otras clases. Se definen con el módulo abc. 
+Abstractas: Son clases que no pueden ser instanciadas directamente y sirven como plantilla para otras clases. Se definen con el módulo abc. 
 ```python
 from abc import ABC, abstractmethod
 
@@ -108,7 +110,7 @@ c = Circulo(5)
 print(c.area())  # Salida: 78.54
 ```
 
-- Singleton
+Singleton
 
 ```python
 class Singleton:
@@ -126,7 +128,7 @@ s2 = Singleton()
 print(s1 is s2)  # Salida: True (Ambos objetos son el mismo)
 ```
 
-- Finales
+Finales
 
 ```python
 from typing import final
@@ -139,7 +141,7 @@ class Coche(Vehiculo):  # ❌ ERROR: No se puede heredar de una clase final
     pass
 ```
 
-- De datos: Introducidas en Python 3.7, permiten definir clases con menos código, automáticamente generando métodos como __init__, __repr__ y __eq__.
+De datos: Introducidas en Python 3.7, permiten definir clases con menos código, automáticamente generando métodos como __init__, __repr__ y __eq__.
 
 ```python
 from dataclasses import dataclass
@@ -153,26 +155,24 @@ p = Persona("Alice", 25)
 print(p)  # Salida: Persona(nombre='Alice', edad=25)
 ```
 
-
-
 Más adelante exploraremos cómo la mutabilidad afecta el comportamiento de los objetos en Python. 🚀 Por ejemplo, las listas y los diccionarios son mutables, pero las cadenas y las tuplas son inmutables. Ya hablaremos de esto más adelante.
 
-¿Qué es una instancia en Python?
-🔵 Es una función dentro de una clase que permite modificar atributos.
-🔴 Es un objeto creado a partir de una clase, con sus propios atributos y métodos.
-🟢 Es el nombre que se le da a una variable dentro de una función.
+> [!TIP] ¿Qué es una instancia en Python?
+> 🔵 Es una función dentro de una clase que permite modificar atributos.
+> 🔴 Es un objeto creado a partir de una clase, con sus propios atributos y métodos.
+> 🟢 Es el nombre que se le da a una variable dentro de una función.
 
-¿Qué es self en una clase de Python?
-🔵 Es una referencia al objeto actual, que permite acceder a sus atributos y métodos.
-🔴 Es un argumento opcional en los métodos de una clase.
-🟢 Es una función especial utilizada para crear nuevas instancias.
+> [!TIP]¿Qué es self en una clase de Python?
+> 🔵 Es una referencia al objeto actual, que permite acceder a sus atributos y métodos.
+> 🔴 Es un argumento opcional en los métodos de una clase.
+> 🟢 Es una función especial utilizada para crear nuevas instancias.
 
-¿Cuál de las siguientes afirmaciones sobre los tipos de clases en Python es correcta?
-🔵 Una clase abstracta no puede ser instanciada directamente y sirve como plantilla para otras clases.
-🔴 Las clases singleton permiten crear múltiples instancias del mismo objeto sin restricciones.
-🟢 Las clases de datos (dataclass) en Python no generan automáticamente métodos como __init__ o __repr__.
+> [!TIP]¿Cuál de las siguientes afirmaciones sobre los tipos de clases en Python es correcta?
+> 🔵 Una clase abstracta no puede ser instanciada directamente y sirve como plantilla para otras clases.
+> 🔴 Las clases singleton permiten crear múltiples instancias del mismo objeto sin restricciones.
+> 🟢 Las clases de datos (dataclass) en Python no generan automáticamente métodos como __init__ o __repr__.
 
-### 📁 Propiedades {#propiedades}
+### 📁 Propiedades 
 
 Las propiedades son **datos asociados a un objeto** que definen su estado.
 
@@ -216,14 +216,14 @@ print(dog1.name)  # Salida: Buddy
 print(dog2.name)  # Salida: Luna
 ```
 
-¿Cuál es la diferencia entre un atributo de instancia y un atributo de clase en Python?
-🔵  Un atributo de instancia es único para cada objeto, mientras que un atributo de clase es compartido por todas las instancias.
-🔴 Un atributo de instancia solo puede cambiarse dentro de la clase, mientras que un atributo de clase se modifica solo desde fuera.
-🟢 Los atributos de clase solo existen en Python, mientras que los atributos de instancia existen en todos los lenguajes.
+> [!TIP]¿Cuál es la diferencia entre un atributo de instancia y un atributo de clase en Python?
+> 🔵  Un atributo de instancia es único para cada objeto, mientras que un atributo de clase es compartido por todas las instancias.
+> 🔴 Un atributo de instancia solo puede cambiarse dentro de la clase, mientras que un atributo de clase se modifica solo desde fuera.
+> 🟢 Los atributos de clase solo existen en Python, mientras que los atributos de instancia existen en todos los lenguajes.
 
 En TS: static (Puedes acceder a prpiedades sin instanciar)
 
-### ⚙️ Métodos {#metodos}
+### ⚙️ Métodos
 
 Los métodos son funciones dentro de una clase que permiten definir el comportamiento de los objetos. 
 
@@ -303,7 +303,7 @@ class Person:
     def __repr__(self):  # Para depuración
         return f"Person(name='{self.name}', age={self.age})"
 ```
-```
+```python
 person = Person("Alice", 30)
 print(str(person))  # Salida: Person(Alice, 30) / también funciona sin str: print((erson))  # Salida: Person(Alice, 30) # Se usa para mostrar información amigable del objeto.
 print(repr(person))  # Salida: Person(name='Alice', age=30)
@@ -322,23 +322,23 @@ print(double(10))  # Salida: 20  (Se comporta como una función) Más convenient
 # en caso de no tenerlo tendríamos que hacer un método y llamarlo: print(double.multiply(10))  # Salida: 20
 ```
 
-¿Cuál es la diferencia entre un método de instancia y un método de clase en Python?
-🔵 Un método de instancia usa self y accede a atributos del objeto, mientras que un método de clase usa cls y accede a atributos de la clase.
-🔴 Un método de instancia solo puede acceder a variables locales, mientras que un método de clase no puede modificar atributos de clase.
-🟢 No hay diferencia, ambos hacen lo mismo pero uno usa self y otro usa cls solo por convención.
+> [!TIP]¿Cuál es la diferencia entre un método de instancia y un método de clase en Python?
+> 🔵 Un método de instancia usa self y accede a atributos del objeto, mientras que un método de clase usa cls y accede a atributos de la clase.
+> 🔴 Un método de instancia solo puede acceder a variables locales, mientras que un método de clase no puede modificar atributos de clase.
+> 🟢 No hay diferencia, ambos hacen lo mismo pero uno usa self y otro usa cls solo por convención.
 
-¿Para qué se usa un método estático (@staticmethod) en Python?
-🔵 Para definir funciones auxiliares dentro de una clase sin necesidad de acceder a atributos de instancia o de clase.
-🔴 Para modificar atributos de clase usando cls.
-🟢 Para modificar atributos de instancia usando self.
+> [!TIP] ¿Para qué se usa un método estático (@staticmethod) en Python?
+> 🔵 Para definir funciones auxiliares dentro de una clase sin necesidad de acceder a atributos de instancia o de clase.
+> 🔴 Para modificar atributos de clase usando cls.
+> 🟢 Para modificar atributos de instancia usando self.
 
-¿Qué permite hacer el método mágico __call__ en Python?
-🔵 Permite que un objeto pueda ser llamado como si fuera una función.
-🔴 Convierte un objeto en iterable.
-🟢 Cambia la representación en string del objeto cuando se usa print().
+> [!TIP]¿Qué permite hacer el método mágico __call__ en Python?
+> 🔵 Permite que un objeto pueda ser llamado como si fuera una función.
+> 🔴 Convierte un objeto en iterable.
+> 🟢 Cambia la representación en string del objeto cuando se usa print().
 
 
-### 👨‍🎓 Herencia {#herencia}
+### 👨‍🎓 Herencia
 
 La herencia es un mecanismo que permite crear nuevas clases basadas en otras existentes. Esto facilita la reutilización de código y la creación de jerarquías de clases.
 
@@ -386,18 +386,20 @@ print(c.mro())
 ```
 Investiga super()  en python
 
-¿Qué ocurre si una clase hija no redefine un método de la clase padre?
-🔵 La clase hija hereda el método y lo ejecuta tal como está en la clase padre.
-🔴 La clase hija genera un error porque no tiene métodos propios.
-🟢 Python ignora la existencia del método en la clase padre y busca en object.
+> [!TIP]¿Qué ocurre si una clase hija no redefine un método de la clase padre?
+> 🔵 La clase hija hereda el método y lo ejecuta tal como está en la clase padre.
+> 🔴 La clase hija genera un error porque no tiene métodos propios.
+> 🟢 Python ignora la existencia del método en la clase padre y busca en object.
 
- ¿Cómo determina Python el orden en que busca los métodos en herencia múltiple?
-🔵 Usa el algoritmo C3 Linearization, buscando primero en la clase actual y luego en los padres en el orden en que fueron declarados.
-🔴 Busca en orden aleatorio entre las clases padre hasta encontrar el método.
-🟢 Siempre busca en object primero y luego en la clase padre más reciente.
+> [!TIP]¿Cómo determina Python el orden en que busca los métodos en herencia múltiple?
+> 🔵 Usa el algoritmo C3 Linearization, buscando primero en la clase actual y luego en los padres en el orden en que fueron declarados.
+> 🔴 Busca en orden aleatorio entre las clases padre hasta encontrar el método.
+> 🟢 Siempre busca en object primero y luego en la clase padre más reciente.
 
 
-### 🎨 Polimorfismo {#polimorfismo}
+### 🎨 Polimorfismo 
+
+<kbd><img src="./img/polymorphismo.jpg" style="border:1px solid grey"></kbd>
 
 El polimorfismo permite que un mismo método tenga diferentes implementaciones en distintas clases. Esto nos permite escribir código más flexible y reutilizable, ya que podemos tratar diferentes objetos de manera uniforme sin preocuparnos por su tipo exacto.
 
@@ -431,7 +433,9 @@ for animal in animales:
     reproducir_sonido(animal)  # No importa qué tipo de animal sea
 ```
 
-### 🏛️ Abstracción {#abstraccion}
+### 🏛️ Abstracción 
+
+<kbd><img src="./img/abstraction.jpg" style="border:1px solid grey"></kbd>
 
 La abstracción en programación es el concepto de ocultar los detalles de implementación de un objeto y exponer solo una interfaz simplificada para interactuar con él. Esto permite usar una clase sin necesidad de conocer su funcionamiento interno.
 
@@ -439,12 +443,14 @@ La abstracción en programación es el concepto de ocultar los detalles de imple
 - Ejemplo de un coche → Solo usas el volante, acelerador y frenos, pero no necesitas saber cómo funciona el motor.
 - Ejemplo en software → Un usuario usa un método .connect() para una base de datos sin saber cómo se maneja internamente la conexión.
 
-¿Cuál es el propósito de la abstracción en programación?
-🔵 Definir clases sin métodos ni atributos, solo para estructurar el código.
-🔴 Permitir crear múltiples instancias de una clase abstracta sin restricciones.
-🟢 Ocultar la implementación interna y exponer solo la funcionalidad esencial.
+> [!TIP] ¿Cuál es el propósito de la abstracción en programación?
+> 🔵 Definir clases sin métodos ni atributos, solo para estructurar el código.
+> 🔴 Permitir crear múltiples instancias de una clase abstracta sin restricciones.
+> 🟢 Ocultar la implementación interna y exponer solo la funcionalidad esencial.
 
-### 🛠️ Encapsulamiento {#encapsulamiento}
+### 🛠️ Encapsulamiento 
+
+<kbd><img src="./img/encapsulation.jpg" style="border:1px solid grey"></kbd>
 
 La encapsulación es un principio de la Programación Orientada a Objetos (POO) que restringe el acceso directo a ciertos atributos de un objeto. Su propósito es proteger los datos y controlar cómo son modificados.
 
@@ -492,10 +498,10 @@ print(account._BankAccount__password)  # 🔥 Name Mangling (Evitar su uso)
 
 Los atributos privados no pueden ser accedidos directamente, pero Python permite un "truco" llamado name mangling para acceder a ellos. Cuando se define un atributo o método con doble guion bajo (__atributo), Python lo renombra internamente agregando el nombre de la clase como prefijo. Para no bloquear completamente el acceso, pero indicar que no debe usarse fuera de la clase. No es equivalente a private en otros lenguajes.
 
-¿Cuál es la principal ventaja del encapsulamiento en Python?
-🔵 Hace que todas las propiedades sean accesibles sin restricciones.
-🔴 Evita que los atributos sean modificados directamente y permite controlar su acceso.
-🟢 Permite cambiar los nombres de los atributos automáticamente sin afectar el código.
+> [!TIP]¿Cuál es la principal ventaja del encapsulamiento en Python?
+> 🔵 Hace que todas las propiedades sean accesibles sin restricciones.
+> 🔴 Evita que los atributos sean modificados directamente y permite controlar su acceso.
+> 🟢 Permite cambiar los nombres de los atributos automáticamente sin afectar el código.
 
 Los getters y setters se usan en programación orientada a objetos para controlar el acceso y la modificación de atributos, en lugar de permitir acceso directo a ellos.
 
@@ -555,11 +561,10 @@ p.price = 200  # ✅ Se modifica como si fuera un atributo (sin set_price())
 # p.price = -50  # ❌ Esto lanzará un ValueError
 ```
 
-¿Cuál es la principal ventaja de usar @property en lugar de métodos get_ y set_ en Python?
-
-🔵 Permite acceder y modificar atributos como si fueran variables normales, manteniendo el control interno.
-🔴 Hace que los atributos sean completamente privados y no puedan ser modificados de ninguna manera.
-🟢 Elimina la necesidad de definir métodos dentro de la clase, ya que los atributos se pueden modificar directamente.
+> [!TIP]¿Cuál es la principal ventaja de usar @property en lugar de métodos get_ y set_ en Python?
+> 🔵 Permite acceder y modificar atributos como si fueran variables normales, manteniendo el control interno.
+> 🔴 Hace que los atributos sean completamente privados y no puedan ser modificados de ninguna manera.
+> 🟢 Elimina la necesidad de definir métodos dentro de la clase, ya que los atributos se pueden modificar directamente.
 
 
 ## 🔹 Composición y asociación
@@ -607,7 +612,7 @@ El objetivo es evitar acoplamiento, depender de una clase abstracta (interface).
 
 ### 👨‍🎓 Principios SOLID {#principios-solid}
 
-Esto acaba de empezar ;)
+Esto acaba de empezar...
 
 1. **S**: Una clase debe tener **una sola razón** para cambiar.
 2. **O**: Abierto para extensión, cerrado para modificación.
@@ -615,7 +620,9 @@ Esto acaba de empezar ;)
 4. **I**: Preferir **interfaces específicas** en lugar de una general.
 5. **D**: **Depender de abstracciones**, no de implementaciones concretas.
 
-## 🎯 Conclusión {#conclusion}
+<kbd><img src="./img/meme1.jpg" style="border:1px solid grey"></kbd>
+
+## 🎯 Conclusión
 
 La POO en Python es un enfoque poderoso para la organización del código. Comprender sus **principios y patrones** mejora la reutilización, mantenibilidad y escalabilidad de los proyectos. ✨
 
