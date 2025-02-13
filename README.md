@@ -18,6 +18,9 @@
 *   [🎯 Conclusión](#conclusion)
 *   [🛠️ Taller](#taller)
 
+&nbsp;
+&nbsp;
+
 ## ✨ Introducción 
 
 La **Programación Orientada a Objetos (POO)** es un paradigma que estructura el código en "objetos", los cuales combinan **datos** (atributos) y **acciones** (métodos). Permite modelar el mundo real de manera intuitiva, mejorando la reutilización, el mantenimiento y la escalabilidad del software. Este enfoque facilita la reutilización, el mantenimiento y la escalabilidad del software.
@@ -42,6 +45,9 @@ Además, es un lenguaje interpretado y dinámico, lo que permite modificar objet
 >- 🔵 Permite modificar objetos en tiempo de ejecución sin necesidad de compilación previa.
 >- 🔴 Requiere compilar el código antes de ejecutarlo, como en C o Java.
 >- 🟢 No permite cambiar los atributos de los objetos una vez creados.
+
+&nbsp;
+&nbsp;
 
 ## 🏷️ Clases
 
