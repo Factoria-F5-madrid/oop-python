@@ -156,17 +156,20 @@ print(p)  # Salida: Persona(nombre='Alice', edad=25)
 
 Más adelante exploraremos cómo la mutabilidad afecta el comportamiento de los objetos en Python. 🚀 Por ejemplo, las listas y los diccionarios son mutables, pero las cadenas y las tuplas son inmutables. Ya hablaremos de esto más adelante.
 
->[!TIP] ¿Qué es una instancia en Python?
+>[!TIP]
+> ¿Qué es una instancia en Python?
 > 🔵 Es una función dentro de una clase que permite modificar atributos.
 > 🔴 Es un objeto creado a partir de una clase, con sus propios atributos y métodos.
 > 🟢 Es el nombre que se le da a una variable dentro de una función.
 
->[!TIP]¿Qué es self en una clase de Python?
+>[!TIP]
+> ¿Qué es self en una clase de Python?
 > 🔵 Es una referencia al objeto actual, que permite acceder a sus atributos y métodos.
 > 🔴 Es un argumento opcional en los métodos de una clase.
 > 🟢 Es una función especial utilizada para crear nuevas instancias.
 
->[!TIP]¿Cuál de las siguientes afirmaciones sobre los tipos de clases en Python es correcta?
+>[!TIP]
+> ¿Cuál de las siguientes afirmaciones sobre los tipos de clases en Python es correcta?
 > 🔵 Una clase abstracta no puede ser instanciada directamente y sirve como plantilla para otras clases.
 > 🔴 Las clases singleton permiten crear múltiples instancias del mismo objeto sin restricciones.
 > 🟢 Las clases de datos (dataclass) en Python no generan automáticamente métodos como __init__ o __repr__.
