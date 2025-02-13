@@ -127,7 +127,7 @@ s2 = Singleton()
 print(s1 is s2)  # Salida: True (Ambos objetos son el mismo)
 ```
 
-Finales
+Finales. El código se ejecuta sin errores porque @final no impide la herencia en tiempo de ejecución. Sin embargo, si usas mypy o un analizador estático, sí recibirás una advertencia.
 
 ```python
 from typing import final
