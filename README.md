@@ -158,21 +158,21 @@ Más adelante exploraremos cómo la mutabilidad afecta el comportamiento de los 
 
 >[!TIP]
 > ¿Qué es una instancia en Python?
-> 🔵 Es una función dentro de una clase que permite modificar atributos.
-> 🔴 Es un objeto creado a partir de una clase, con sus propios atributos y métodos.
-> 🟢 Es el nombre que se le da a una variable dentro de una función.
+> - 🔵 Es una función dentro de una clase que permite modificar atributos.
+> - 🔴 Es un objeto creado a partir de una clase, con sus propios atributos y métodos.
+> - 🟢 Es el nombre que se le da a una variable dentro de una función.
 
 >[!TIP]
 > ¿Qué es self en una clase de Python?
-> 🔵 Es una referencia al objeto actual, que permite acceder a sus atributos y métodos.
-> 🔴 Es un argumento opcional en los métodos de una clase.
-> 🟢 Es una función especial utilizada para crear nuevas instancias.
+> - 🔵 Es una referencia al objeto actual, que permite acceder a sus atributos y métodos.
+> - 🔴 Es un argumento opcional en los métodos de una clase.
+> - 🟢 Es una función especial utilizada para crear nuevas instancias.
 
 >[!TIP]
 > ¿Cuál de las siguientes afirmaciones sobre los tipos de clases en Python es correcta?
-> 🔵 Una clase abstracta no puede ser instanciada directamente y sirve como plantilla para otras clases.
-> 🔴 Las clases singleton permiten crear múltiples instancias del mismo objeto sin restricciones.
-> 🟢 Las clases de datos (dataclass) en Python no generan automáticamente métodos como __init__ o __repr__.
+> - 🔵 Una clase abstracta no puede ser instanciada directamente y sirve como plantilla para otras clases.
+> - 🔴 Las clases singleton permiten crear múltiples instancias del mismo objeto sin restricciones.
+> - 🟢 Las clases de datos (dataclass) en Python no generan automáticamente métodos como __init__ o __repr__.
 
 ### 📁 Propiedades 
 
@@ -218,10 +218,11 @@ print(dog1.name)  # Salida: Buddy
 print(dog2.name)  # Salida: Luna
 ```
 
-> [!TIP]¿Cuál es la diferencia entre un atributo de instancia y un atributo de clase en Python?
-> 🔵  Un atributo de instancia es único para cada objeto, mientras que un atributo de clase es compartido por todas las instancias.
-> 🔴 Un atributo de instancia solo puede cambiarse dentro de la clase, mientras que un atributo de clase se modifica solo desde fuera.
-> 🟢 Los atributos de clase solo existen en Python, mientras que los atributos de instancia existen en todos los lenguajes.
+> [!TIP]
+> ¿Cuál es la diferencia entre un atributo de instancia y un atributo de clase en Python?
+> - 🔵  Un atributo de instancia es único para cada objeto, mientras que un atributo de clase es compartido por todas las instancias.
+> - 🔴 Un atributo de instancia solo puede cambiarse dentro de la clase, mientras que un atributo de clase se modifica solo desde fuera.
+> - 🟢 Los atributos de clase solo existen en Python, mientras que los atributos de instancia existen en todos los lenguajes.
 
 En TS: static (Puedes acceder a prpiedades sin instanciar)
 
@@ -324,20 +325,23 @@ print(double(10))  # Salida: 20  (Se comporta como una función) Más convenient
 # en caso de no tenerlo tendríamos que hacer un método y llamarlo: print(double.multiply(10))  # Salida: 20
 ```
 
-> [!TIP]¿Cuál es la diferencia entre un método de instancia y un método de clase en Python?
-> 🔵 Un método de instancia usa self y accede a atributos del objeto, mientras que un método de clase usa cls y accede a atributos de la clase.
-> 🔴 Un método de instancia solo puede acceder a variables locales, mientras que un método de clase no puede modificar atributos de clase.
-> 🟢 No hay diferencia, ambos hacen lo mismo pero uno usa self y otro usa cls solo por convención.
+> [!TIP]
+> ¿Cuál es la diferencia entre un método de instancia y un método de clase en Python?
+> - 🔵 Un método de instancia usa self y accede a atributos del objeto, mientras que un método de clase usa cls y accede a atributos de la clase.
+> - 🔴 Un método de instancia solo puede acceder a variables locales, mientras que un método de clase no puede modificar atributos de clase.
+> - 🟢 No hay diferencia, ambos hacen lo mismo pero uno usa self y otro usa cls solo por convención.
 
-> [!TIP] ¿Para qué se usa un método estático (@staticmethod) en Python?
-> 🔵 Para definir funciones auxiliares dentro de una clase sin necesidad de acceder a atributos de instancia o de clase.
-> 🔴 Para modificar atributos de clase usando cls.
-> 🟢 Para modificar atributos de instancia usando self.
+> [!TIP]
+> ¿Para qué se usa un método estático (@staticmethod) en Python?
+> - 🔵 Para definir funciones auxiliares dentro de una clase sin necesidad de acceder a atributos de instancia o de clase.
+> - 🔴 Para modificar atributos de clase usando cls.
+> - 🟢 Para modificar atributos de instancia usando self.
 
-> [!TIP]¿Qué permite hacer el método mágico __call__ en Python?
-> 🔵 Permite que un objeto pueda ser llamado como si fuera una función.
-> 🔴 Convierte un objeto en iterable.
-> 🟢 Cambia la representación en string del objeto cuando se usa print().
+> [!TIP]
+> ¿Qué permite hacer el método mágico __call__ en Python?
+> - 🔵 Permite que un objeto pueda ser llamado como si fuera una función.
+> - 🔴 Convierte un objeto en iterable.
+> - 🟢 Cambia la representación en string del objeto cuando se usa print().
 
 
 ### 👨‍🎓 Herencia
@@ -388,15 +392,17 @@ print(c.mro())
 ```
 Investiga super()  en python
 
-> [!TIP]¿Qué ocurre si una clase hija no redefine un método de la clase padre?
-> 🔵 La clase hija hereda el método y lo ejecuta tal como está en la clase padre.
-> 🔴 La clase hija genera un error porque no tiene métodos propios.
-> 🟢 Python ignora la existencia del método en la clase padre y busca en object.
+> [!TIP]
+> ¿Qué ocurre si una clase hija no redefine un método de la clase padre?
+> - 🔵 La clase hija hereda el método y lo ejecuta tal como está en la clase padre.
+> - 🔴 La clase hija genera un error porque no tiene métodos propios.
+> - 🟢 Python ignora la existencia del método en la clase padre y busca en object.
 
-> [!TIP]¿Cómo determina Python el orden en que busca los métodos en herencia múltiple?
-> 🔵 Usa el algoritmo C3 Linearization, buscando primero en la clase actual y luego en los padres en el orden en que fueron declarados.
-> 🔴 Busca en orden aleatorio entre las clases padre hasta encontrar el método.
-> 🟢 Siempre busca en object primero y luego en la clase padre más reciente.
+> [!TIP]
+> ¿Cómo determina Python el orden en que busca los métodos en herencia múltiple?
+> - 🔵 Usa el algoritmo C3 Linearization, buscando primero en la clase actual y luego en los padres en el orden en que fueron declarados.
+> - 🔴 Busca en orden aleatorio entre las clases padre hasta encontrar el método.
+> - 🟢 Siempre busca en object primero y luego en la clase padre más reciente.
 
 
 ### 🎨 Polimorfismo 
@@ -445,10 +451,11 @@ La abstracción en programación es el concepto de ocultar los detalles de imple
 - Ejemplo de un coche → Solo usas el volante, acelerador y frenos, pero no necesitas saber cómo funciona el motor.
 - Ejemplo en software → Un usuario usa un método .connect() para una base de datos sin saber cómo se maneja internamente la conexión.
 
-> [!TIP] ¿Cuál es el propósito de la abstracción en programación?
-> 🔵 Definir clases sin métodos ni atributos, solo para estructurar el código.
-> 🔴 Permitir crear múltiples instancias de una clase abstracta sin restricciones.
-> 🟢 Ocultar la implementación interna y exponer solo la funcionalidad esencial.
+> [!TIP]
+> ¿Cuál es el propósito de la abstracción en programación?
+> - 🔵 Definir clases sin métodos ni atributos, solo para estructurar el código.
+> - 🔴 Permitir crear múltiples instancias de una clase abstracta sin restricciones.
+> - 🟢 Ocultar la implementación interna y exponer solo la funcionalidad esencial.
 
 ### 🛠️ Encapsulamiento 
 
@@ -500,10 +507,11 @@ print(account._BankAccount__password)  # 🔥 Name Mangling (Evitar su uso)
 
 Los atributos privados no pueden ser accedidos directamente, pero Python permite un "truco" llamado name mangling para acceder a ellos. Cuando se define un atributo o método con doble guion bajo (__atributo), Python lo renombra internamente agregando el nombre de la clase como prefijo. Para no bloquear completamente el acceso, pero indicar que no debe usarse fuera de la clase. No es equivalente a private en otros lenguajes.
 
-> [!TIP]¿Cuál es la principal ventaja del encapsulamiento en Python?
-> 🔵 Hace que todas las propiedades sean accesibles sin restricciones.
-> 🔴 Evita que los atributos sean modificados directamente y permite controlar su acceso.
-> 🟢 Permite cambiar los nombres de los atributos automáticamente sin afectar el código.
+> [!TIP]
+> ¿Cuál es la principal ventaja del encapsulamiento en Python?
+> - 🔵 Hace que todas las propiedades sean accesibles sin restricciones.
+> - 🔴 Evita que los atributos sean modificados directamente y permite controlar su acceso.
+> - 🟢 Permite cambiar los nombres de los atributos automáticamente sin afectar el código.
 
 Los getters y setters se usan en programación orientada a objetos para controlar el acceso y la modificación de atributos, en lugar de permitir acceso directo a ellos.
 
@@ -563,10 +571,11 @@ p.price = 200  # ✅ Se modifica como si fuera un atributo (sin set_price())
 # p.price = -50  # ❌ Esto lanzará un ValueError
 ```
 
-> [!TIP]¿Cuál es la principal ventaja de usar @property en lugar de métodos get_ y set_ en Python?
-> 🔵 Permite acceder y modificar atributos como si fueran variables normales, manteniendo el control interno.
-> 🔴 Hace que los atributos sean completamente privados y no puedan ser modificados de ninguna manera.
-> 🟢 Elimina la necesidad de definir métodos dentro de la clase, ya que los atributos se pueden modificar directamente.
+> [!TIP]
+> ¿Cuál es la principal ventaja de usar @property en lugar de métodos get_ y set_ en Python?
+> - 🔵 Permite acceder y modificar atributos como si fueran variables normales, manteniendo el control interno.
+> - 🔴 Hace que los atributos sean completamente privados y no puedan ser modificados de ninguna manera.
+> - 🟢 Elimina la necesidad de definir métodos dentro de la clase, ya que los atributos se pueden modificar directamente.
 
 
 ## 🔹 Composición y asociación
