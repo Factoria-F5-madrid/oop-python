@@ -6,16 +6,15 @@
 ## 🔍 Índice
 
 *   [✨ Introducción](#introduccion)
-*   [🔬 Conceptos Fundamentales](#conceptos-fundamentales)
-    *   [🏷️ Clases](#clases)
-    *   [📁 Propiedades](#propiedades)
-    *   [⚙️ Métodos](#metodos)
-    *   [👨‍🎓 Herencia](#herencia)
-    *   [🎨 Polimorfismo](#polimorfismo)
-    *   [🏛️ Abstracción](#abstraccion)
-    *   [🛠️ Encapsulamiento](#encapsulamiento)
-    *   [📦 Composición y asociación](#composicio-y-asociacion)
-    *   [👨‍🎓 Principios SOLID](#principios-solid)
+*   [🏷️ Clases](#clases)
+*   [📁 Propiedades](#propiedades)
+*   [⚙️ Métodos](#metodos)
+*   [👨‍🎓 Herencia](#herencia)
+*   [🎨 Polimorfismo](#polimorfismo)
+*   [🏛️ Abstracción](#abstraccion)
+*   [🛠️ Encapsulamiento](#encapsulamiento)
+*   [📦 Composición y asociación](#composicio-y-asociacion)
+*   [👨‍🎓 Principios SOLID](#principios-solid)
 *   [🎯 Conclusión](#conclusion)
 *   [🛠️ Taller](#taller)
 
@@ -44,9 +43,7 @@ Además, es un lenguaje interpretado y dinámico, lo que permite modificar objet
 >- 🔴 Requiere compilar el código antes de ejecutarlo, como en C o Java.
 >- 🟢 No permite cambiar los atributos de los objetos una vez creados.
 
-## 🔬 Conceptos Fundamentales 
-
-  ### 🏷️ Clases
+## 🏷️ Clases
 
 En Python, una clase es una plantilla para crear objetos. Define las propiedades (atributos) y las acciones (métodos) que los objetos tendrán.
 
@@ -174,7 +171,7 @@ Más adelante exploraremos cómo la mutabilidad afecta el comportamiento de los 
 > - 🔴 Las clases singleton permiten crear múltiples instancias del mismo objeto sin restricciones.
 > - 🟢 Las clases de datos (dataclass) en Python no generan automáticamente métodos como __init__ o __repr__.
 
-### 📁 Propiedades 
+## 📁 Propiedades 
 
 Las propiedades son **datos asociados a un objeto** que definen su estado.
 
@@ -226,7 +223,7 @@ print(dog2.name)  # Salida: Luna
 
 En TS: static (Puedes acceder a prpiedades sin instanciar)
 
-### ⚙️ Métodos
+## ⚙️ Métodos
 
 Los métodos son funciones dentro de una clase que permiten definir el comportamiento de los objetos. 
 
@@ -344,7 +341,7 @@ print(double(10))  # Salida: 20  (Se comporta como una función) Más convenient
 > - 🟢 Cambia la representación en string del objeto cuando se usa print().
 
 
-### 👨‍🎓 Herencia
+## 👨‍🎓 Herencia
 
 La herencia es un mecanismo que permite crear nuevas clases basadas en otras existentes. Esto facilita la reutilización de código y la creación de jerarquías de clases.
 
@@ -405,7 +402,7 @@ Investiga super()  en python
 > - 🟢 Siempre busca en object primero y luego en la clase padre más reciente.
 
 
-### 🎨 Polimorfismo 
+## 🎨 Polimorfismo 
 
 <kbd><img src="./img/polymorphismo.jpg" style="border:1px solid grey"></kbd>
 
@@ -441,7 +438,7 @@ for animal in animales:
     reproducir_sonido(animal)  # No importa qué tipo de animal sea
 ```
 
-### 🏛️ Abstracción 
+## 🏛️ Abstracción 
 
 <kbd><img src="./img/abstraction.jpg" style="border:1px solid grey"></kbd>
 
@@ -621,7 +618,7 @@ print(car.start())  # ✅ "Engine started"
 
 El objetivo es evitar acoplamiento, depender de una clase abstracta (interface)...
 
-### 👨‍🎓 Principios SOLID {#principios-solid}
+## 👨‍🎓 Principios SOLID 
 
 Esto acaba de empezar...
 
