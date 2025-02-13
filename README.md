@@ -228,6 +228,8 @@ print(dog2.name)  # Salida: Luna
 
 En TS: static (Puedes acceder a prpiedades sin instanciar)
 
+&nbsp;
+
 ## ⚙️ Métodos
 
 Los métodos son funciones dentro de una clase que permiten definir el comportamiento de los objetos. 
@@ -345,6 +347,7 @@ print(double(10))  # Salida: 20  (Se comporta como una función) Más convenient
 > - 🔴 Convierte un objeto en iterable.
 > - 🟢 Cambia la representación en string del objeto cuando se usa print().
 
+&nbsp;
 
 ## 👨‍🎓 Herencia
 
@@ -406,6 +409,7 @@ Investiga super()  en python
 > - 🔴 Busca en orden aleatorio entre las clases padre hasta encontrar el método.
 > - 🟢 Siempre busca en object primero y luego en la clase padre más reciente.
 
+&nbsp;
 
 ## 🎨 Polimorfismo 
 
@@ -442,6 +446,8 @@ animales = [Perro(), Gato()]
 for animal in animales:
     reproducir_sonido(animal)  # No importa qué tipo de animal sea
 ```
+
+&nbsp;
 
 ## 🏛️ Abstracción 
 
@@ -579,6 +585,7 @@ p.price = 200  # ✅ Se modifica como si fuera un atributo (sin set_price())
 > - 🔴 Hace que los atributos sean completamente privados y no puedan ser modificados de ninguna manera.
 > - 🟢 Elimina la necesidad de definir métodos dentro de la clase, ya que los atributos se pueden modificar directamente.
 
+&nbsp;
 
 ## 🔹 Composición y asociación
 
@@ -635,9 +642,13 @@ Esto acaba de empezar...
 
 <kbd><img src="./img/meme1.jpg" style="border:1px solid grey"></kbd>
 
+&nbsp;
+
 ## 🎯 Conclusión
 
 La POO en Python es un enfoque poderoso para la organización del código. Comprender sus **principios y patrones** mejora la reutilización, mantenibilidad y escalabilidad de los proyectos. ✨
+
+&nbsp;
 
 ## Taller
 
