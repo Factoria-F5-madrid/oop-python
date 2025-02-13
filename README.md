@@ -19,9 +19,6 @@
 *   [🛠️ Taller](#taller)
 
 &nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
 
 ## ✨ Introducción 
 
@@ -47,9 +44,6 @@ Además, es un lenguaje interpretado y dinámico, lo que permite modificar objet
 >- 🔴 Requiere compilar el código antes de ejecutarlo, como en C o Java.
 >- 🟢 No permite cambiar los atributos de los objetos una vez creados.
 
-&nbsp;
-&nbsp;
-&nbsp;
 &nbsp;
 
 ## 🏷️ Clases
@@ -179,6 +173,8 @@ Más adelante exploraremos cómo la mutabilidad afecta el comportamiento de los 
 > - 🔵 Una clase abstracta no puede ser instanciada directamente y sirve como plantilla para otras clases.
 > - 🔴 Las clases singleton permiten crear múltiples instancias del mismo objeto sin restricciones.
 > - 🟢 Las clases de datos (dataclass) en Python no generan automáticamente métodos como __init__ o __repr__.
+
+&nbsp;
 
 ## 📁 Propiedades 
 
