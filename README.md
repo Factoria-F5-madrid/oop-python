@@ -465,6 +465,8 @@ La abstracción en programación es el concepto de ocultar los detalles de imple
 > - 🔴 Permitir crear múltiples instancias de una clase abstracta sin restricciones.
 > - 🟢 Ocultar la implementación interna y exponer solo la funcionalidad esencial.
 
+&nbsp;
+
 ### 🛠️ Encapsulamiento 
 
 <kbd><img src="./img/encapsulation.jpg" style="border:1px solid grey"></kbd>
@@ -629,6 +631,8 @@ print(car.start())  # ✅ "Engine started"
 📌 Usamos Composición cuando un objeto gestiona completamente a otro.
 
 El objetivo es evitar acoplamiento, depender de una clase abstracta (interface)...
+
+&nbsp;
 
 ## 👨‍🎓 Principios SOLID 
 
