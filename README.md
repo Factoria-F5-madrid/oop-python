@@ -9,9 +9,9 @@
 *   [🏷️ Clases](#clases)
 *   [📁 Propiedades](#propiedades)
 *   [⚙️ Métodos](#metodos)
+*   [🏛️ Abstracción](#abstraccion)
 *   [👨‍🎓 Herencia](#herencia)
 *   [🎨 Polimorfismo](#polimorfismo)
-*   [🏛️ Abstracción](#abstraccion)
 *   [🛠️ Encapsulamiento](#encapsulamiento)
 *   [📦 Composición y asociación](#composicio-y-asociacion)
 *   [👨‍🎓 Principios SOLID](#principios-solid)
@@ -32,7 +32,7 @@ Ejemplo:
   - **Atributos:** color, tamaño, número de habitaciones
   - **Métodos:** abrir_puerta(), cerrar_ventana(), encender_luz()
 
-Es la manera en la que vamos a pensar a la hora de picar código y también tiene una sintaxis y unos elementos propios para cada lenguaje que debemos conocer. Son preguntas técnicas incluso antes de una entrevista.
+Es la manera en la que vamos a pensar a la hora de picar código y también tiene una sintaxis (Palabras reservadas) y unos elementos propios para cada lenguaje que debemos conocer. Son preguntas técnicas incluso antes de una entrevista.
 
 Python es multiparadigma: funcional, orientado a eventos, orientado a objetos. Aunque Python está diseñado principalmente como un lenguaje orientado a objetos. Todo en Python es un objeto, incluyendo funciones, números, cadenas y listas.  Python no es puramente funcional como Haskell, ni puramente orientado a objetos como Java, sino un equilibrio entre ambos. 
 
@@ -349,6 +349,24 @@ print(double(10))  # Salida: 20  (Se comporta como una función) Más convenient
 
 &nbsp;
 
+## 🏛️ Abstracción 
+
+<kbd><img src="./img/abstraction.jpg" style="border:1px solid grey"></kbd>
+
+La abstracción en programación es el concepto de ocultar los detalles de implementación de un objeto y exponer solo una interfaz simplificada para interactuar con él. Esto permite usar una clase sin necesidad de conocer su funcionamiento interno.
+
+📌 En la vida real:
+- Ejemplo de un coche → Solo usas el volante, acelerador y frenos, pero no necesitas saber cómo funciona el motor.
+- Ejemplo en software → Un usuario usa un método .connect() para una base de datos sin saber cómo se maneja internamente la conexión.
+
+> [!TIP]
+> ¿Cuál es el propósito de la abstracción en programación?
+> - 🔵 Definir clases sin métodos ni atributos, solo para estructurar el código.
+> - 🔴 Permitir crear múltiples instancias de una clase abstracta sin restricciones.
+> - 🟢 Ocultar la implementación interna y exponer solo la funcionalidad esencial.
+
+&nbsp;
+
 ## 👨‍🎓 Herencia
 
 La herencia es un mecanismo que permite crear nuevas clases basadas en otras existentes. Esto facilita la reutilización de código y la creación de jerarquías de clases.
@@ -446,24 +464,6 @@ animales = [Perro(), Gato()]
 for animal in animales:
     reproducir_sonido(animal)  # No importa qué tipo de animal sea
 ```
-
-&nbsp;
-
-## 🏛️ Abstracción 
-
-<kbd><img src="./img/abstraction.jpg" style="border:1px solid grey"></kbd>
-
-La abstracción en programación es el concepto de ocultar los detalles de implementación de un objeto y exponer solo una interfaz simplificada para interactuar con él. Esto permite usar una clase sin necesidad de conocer su funcionamiento interno.
-
-📌 En la vida real:
-- Ejemplo de un coche → Solo usas el volante, acelerador y frenos, pero no necesitas saber cómo funciona el motor.
-- Ejemplo en software → Un usuario usa un método .connect() para una base de datos sin saber cómo se maneja internamente la conexión.
-
-> [!TIP]
-> ¿Cuál es el propósito de la abstracción en programación?
-> - 🔵 Definir clases sin métodos ni atributos, solo para estructurar el código.
-> - 🔴 Permitir crear múltiples instancias de una clase abstracta sin restricciones.
-> - 🟢 Ocultar la implementación interna y exponer solo la funcionalidad esencial.
 
 &nbsp;
 
