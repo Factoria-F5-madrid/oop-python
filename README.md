@@ -591,6 +591,23 @@ p.price = 200  # ✅ Se modifica como si fuera un atributo (sin set_price())
 
 ## 🔹 Composición y asociación
 
+### 📌 Composición (Un objeto contiene otro y lo controla)
+```python
+  class CPU:
+      def process(self):
+          return "Processing..."
+
+  class Computer:
+      def __init__(self):
+          self.cpu = CPU()  # La computadora crea y gestiona su CPU
+      
+      def start(self):
+          return self.cpu.process()
+
+  pc = Computer()
+  print(pc.start())  # ✅ "Processing..."
+```
+
 ### 📌 Asociación (Un objeto usa otro)
 ```python
 class Engine:
@@ -610,25 +627,48 @@ car = Car(engine)
 print(car.start())  # ✅ "Engine started"
 ```
 
-### 📌 Composición (Un objeto contiene otro y lo controla)
-```python
-  class CPU:
-      def process(self):
-          return "Processing..."
+```
+from abc import ABC, abstractmethod
 
-  class Computer:
-      def __init__(self):
-          self.cpu = CPU()  # La computadora crea y gestiona su CPU
-      
-      def start(self):
-          return self.cpu.process()
+# 1. Definimos una abstracción (interfaz). UN CONTRATO
+class PaperType(ABC):
+    @abstractmethod
+    def get_paper_type(self):
+        pass
 
-  pc = Computer()
-  print(pc.start())  # ✅ "Processing..."
+# 2. Implementaciones concretas (Glossy y Matte) dependen de la abstracción
+class GlossyPaper(PaperType):
+    def get_paper_type(self):
+        return "Glossy Paper"
+
+class MattePaper(PaperType):
+    def get_paper_type(self):
+        return "Matte Paper"
+
+
+
+#DEPENDE DE LA ABSTRACCIÓN
+# 3. Printer ahora depende de la abstracción, no de implementaciones concretas
+class Printer:
+    def __init__(self, paper: PaperType):
+        self.paper = paper  # ✅ Dependencia inyectada como abstracción
+
+    def print_document(self, document: str):
+        print(f"Printing on {self.paper.get_paper_type()}: {document}")
+
+# 4. Uso del código con inyección de dependencias
+glossy_paper = GlossyPaper()
+matte_paper = MattePaper()
+
+printer1 = Printer(glossy_paper)  # Printer no sabe qué tipo de papel es, solo que cumple con PaperType
+printer2 = Printer(matte_paper)
+
+printer1.print_document("Report for Client A")
+printer2.print_document("Invoice #12345")
 ```
 
-📌 Usamos Asociación cuando los objetos pueden existir de forma independiente.
-📌 Usamos Composición cuando un objeto gestiona completamente a otro.
+- 📌 Usamos Asociación cuando los objetos pueden existir de forma independiente.
+- 📌 Usamos Composición cuando un objeto gestiona completamente a otro.
 
 El objetivo es evitar acoplamiento, depender de una clase abstracta (interface)...
 
