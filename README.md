@@ -411,9 +411,9 @@ El Orden de Resolución de Métodos (MRO - Method Resolution Order) es la regla 
 - Cuando hay herencia múltiple, Python usa el algoritmo C3 Linearization para determinar el orden en que se buscan los métodos. Se busca primero en la clase actual. Luego, en el primer padre definido en la lista de herencia. Después, en el segundo padre, y así sucesivamente. Si un método aparece en más de una clase, se sigue el orden de declaración.
 
 ```python
-print(c.mro())
+print(C.mro()) # [<class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>] mro es un método de clase
 ```
-Investiga super()  en python
+Investiga super() en python (Cuando: Sobrescribes un método y quieres también el del padre. Inicializas __init__)
 
 > [!TIP]
 > ¿Qué ocurre si una clase hija no redefine un método de la clase padre?
@@ -645,8 +645,6 @@ class MattePaper(PaperType):
     def get_paper_type(self):
         return "Matte Paper"
 
-
-
 #DEPENDE DE LA ABSTRACCIÓN
 # 3. Printer ahora depende de la abstracción, no de implementaciones concretas
 class Printer:
@@ -670,7 +668,7 @@ printer2.print_document("Invoice #12345")
 - 📌 Usamos Asociación cuando los objetos pueden existir de forma independiente.
 - 📌 Usamos Composición cuando un objeto gestiona completamente a otro.
 
-El objetivo es evitar acoplamiento, depender de una clase abstracta (interface)...
+El objetivo es evitar acoplamiento y para ello es mejor depender de una clase abstracta (interface)...
 
 &nbsp;
 
