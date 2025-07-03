@@ -226,7 +226,7 @@ print(dog2.name)  # Salida: Luna
 > - 🔴 Un atributo de instancia solo puede cambiarse dentro de la clase, mientras que un atributo de clase se modifica solo desde fuera.
 > - 🟢 Los atributos de clase solo existen en Python, mientras que los atributos de instancia existen en todos los lenguajes.
 
-En TS: static (Puedes acceder a prpiedades sin instanciar)
+Con static (Puedes acceder a propiedades sin instanciar)
 
 &nbsp;
 
