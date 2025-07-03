@@ -82,7 +82,7 @@ También es importante diferencias tipos de clases:
 | **Tipo de Clase**            | **Descripción**                                         |
 |-----------------------------|-----------------------------------------------------|
 | **Clases Normales**         | Clases estándar con atributos y métodos.           |
-| **Clases Abstractas**       | No pueden ser instanciadas, sirven como plantilla. |
+| **Clases Abstractas**       | No pueden ser instanciadas (No puedes crear un objeto de ellas), sirven como plantilla. |
 | **Clases de Datos (`dataclass`)** | Generan métodos automáticamente (`__init__`, `__repr__`, etc.). |
 | **Clases Finales (`@final`)** | No permiten herencia.                              |
 | **Clases Singleton**        | Garantizan una única instancia en todo el programa. |
