@@ -140,7 +140,7 @@ class Coche(Vehiculo):  # ❌ ERROR: No se puede heredar de una clase final
     pass
 ```
 
-De datos: Introducidas en Python 3.7, permiten definir clases con menos código, automáticamente generando métodos como __init__, __repr__ y __eq__.
+De datos: Introducidas en Python 3.7, permiten definir clases con menos código, automáticamente generando métodos como __init__, __repr__ (repr: Devuelve una representación legible de la instancia, útil para depuración) y __eq__. (eq: Implementa la comparación de igualdad entre dos instancias basándose en sus atributos)
 
 ```python
 from dataclasses import dataclass
