@@ -1,5 +1,6 @@
 # 💻 Programación Orientada a Objetos con Python
 
+
 <kbd><img src="./img/meme2.png" style="border:1px solid grey"></kbd>
 
 
@@ -38,6 +39,8 @@ Python es multiparadigma: funcional, orientado a eventos, orientado a objetos. A
 
 Además, es un lenguaje interpretado y dinámico, lo que permite modificar objetos en tiempo de ejecución sin necesidad de compilación previa.
 
+Por debajo tiene C
+
 > [!TIP]
 > 🚨 ¿Qué característica distingue a Python como un lenguaje dinámico e interpretado?
 >- 🔵 Permite modificar objetos en tiempo de ejecución sin necesidad de compilación previa.
@@ -52,9 +55,12 @@ En Python, una clase es una plantilla para crear objetos. Define las propiedades
 
 ```python
 class Person: #Los nombres de las clases de Python se escriben en notación CapitalizedWords por convención. 
-  def __init__(self, name, age): #__init__ es el constructor, la función especial que se ejecuta al crear una instancia de la clase.
-    self.name = name # Atributo de instancia
-    self.age = age # Atributo de instancia
+    """
+    Clase que representa a una persona con nombre y edad.
+    """
+    def __init__(self, name, age): #__init__ es el constructor, la función especial que se ejecuta al crear una instancia de la clase.
+        self.name = name # Atributo de instancia
+        self.age = age # Atributo de instancia
 
   def introduce(self): #self es la referencia al objeto actual y permite acceder a sus atributos y métodos.
     return f"Hello, I am {self.name} and I am {self.age} years old."
@@ -77,6 +83,35 @@ print(a == b)  # False (son objetos distintos en memoria)
 a.age = 10
 ```
 
+La mutabilidad afecta el comportamiento de los objetos en Python. 🚀 Por ejemplo, las listas y los diccionarios son mutables, pero las cadenas y las tuplas son inmutables. 
+
+En Python, es una buena práctica documentar tus clases y métodos usando **docstrings** (comentarios entre triple comilla). Esto ayuda a entender rápidamente el propósito de cada clase o función, facilita el mantenimiento y permite que herramientas como `help()`, IDEs y generadores de documentación automática muestren información útil.
+
+Ejemplo de docstring en una clase:
+
+```python
+class Persona:
+    """
+    Clase que representa a una persona.
+
+    Atributos:
+        nombre (str): El nombre de la persona.
+        edad (int): La edad de la persona.
+    """
+    def __init__(self, nombre, edad):
+        """
+        Inicializa una nueva persona.
+
+        Args:
+            nombre (str): El nombre de la persona.
+            edad (int): La edad de la persona.
+        """
+        self.nombre = nombre
+        self.edad = edad
+```
+
+A continuación, todas las clases de este documento incluyen su respectivo docstring explicativo.
+
 También es importante diferencias tipos de clases:
 
 | **Tipo de Clase**            | **Descripción**                                         |
@@ -89,16 +124,24 @@ También es importante diferencias tipos de clases:
 
 Ejemplos:
 
-Abstractas: Son clases que no pueden ser instanciadas directamente y sirven como plantilla para otras clases. Se definen con el módulo abc. 
+Abstractas: Son clases que no pueden ser instanciadas directamente y sirven como plantilla para 
+otras clases. Se definen con el módulo abc. 
+
 ```python
 from abc import ABC, abstractmethod
 
 class Figura(ABC):
+    """
+    Clase abstracta que define la interfaz para figuras geométricas.
+    """
     @abstractmethod
     def area(self):
         pass  # Método obligatorio en subclases
 
 class Circulo(Figura):
+    """
+    Representa un círculo, subclase de Figura.
+    """
     def __init__(self, radio):
         self.radio = radio
 
@@ -109,10 +152,17 @@ c = Circulo(5)
 print(c.area())  # Salida: 78.54
 ```
 
-Singleton
+Si creas una subclase como Circulo, debes implementar el método area.
+Si no lo implementas, Python te dará un error cuando intentes crear una instancia de Circulo.
+Es una especie de contrato
+
+🧩 Singleton
 
 ```python
 class Singleton:
+    """
+    Implementa el patrón Singleton: solo permite una instancia de la clase.
+    """
     _instance = None  # Variable de clase para almacenar la única instancia
 
     def __new__(cls): #El método __new__ se ejecuta antes que __init__ y controla la creación del objeto. Si ya existe una instancia, simplemente devuelve la existente en lugar de crear una nueva.
@@ -127,16 +177,24 @@ s2 = Singleton()
 print(s1 is s2)  # Salida: True (Ambos objetos son el mismo)
 ```
 
-Finales. El código se ejecuta sin errores porque @final no impide la herencia en tiempo de ejecución. Sin embargo, si usas mypy o un analizador estático, sí recibirás una advertencia.
+Finales. El código se ejecuta sin errores porque @final no impide la herencia en tiempo de ejecución. Python puro lo permite y el código se ejecuta normalmente. Sin embargo, si usas mypy o un analizador estático, sí recibirás una advertencia.
 
 ```python
 from typing import final
 
+#¿Qué es un decorador? Un decorador en Python es una función especial que modifica el comportamiento de otra función o método sin cambiar su código. Se usa colocando @nombre_del_decorador antes de la función o método que queremos modificar.
+
 @final
 class Vehiculo:
+    """
+    Clase final que representa un vehículo. No debe ser heredada.
+    """
     pass
 
 class Coche(Vehiculo):  # ❌ ERROR: No se puede heredar de una clase final
+    """
+    Ejemplo de intento de herencia de una clase final (no recomendado).
+    """
     pass
 ```
 
@@ -145,16 +203,19 @@ De datos: Introducidas en Python 3.7, permiten definir clases con menos código,
 ```python
 from dataclasses import dataclass
 
+#¿Qué es un decorador? Un decorador en Python es una función especial que modifica el comportamiento de otra función o método sin cambiar su código. Se usa colocando @nombre_del_decorador antes de la función o método que queremos modificar.
+
 @dataclass
 class Persona:
+    """
+    Clase de datos que representa a una persona con nombre y edad.
+    """
     nombre: str
     edad: int
 
 p = Persona("Alice", 25)
 print(p)  # Salida: Persona(nombre='Alice', edad=25)
 ```
-
-Más adelante exploraremos cómo la mutabilidad afecta el comportamiento de los objetos en Python. 🚀 Por ejemplo, las listas y los diccionarios son mutables, pero las cadenas y las tuplas son inmutables. Ya hablaremos de esto más adelante.
 
 >[!TIP]
 > ¿Qué es una instancia en Python?
@@ -182,7 +243,7 @@ Las propiedades son **datos asociados a un objeto** que definen su estado.
 
 Existen dos tipos principales de propiedades en Python en función de si son de clase o de intancia
 
-1️⃣ Atributos de instancia → Son específicos de cada objeto y se definen en el constructor __init__().
+1️⃣ Propiedades / Atributos de instancia → Son específicos de cada objeto y se definen en el constructor __init__(). Los que hemos visto hasta ahora
 
 ```python
 class Coche:
@@ -197,7 +258,7 @@ print(coche1.marca)  # Salida: Toyota
 print(coche2.marca)  # Salida: Ford
 ```
 
-2️⃣ Atributos de clase → Son compartidos por todas las instancias de la clase. Por ejemplo, la siguiente Dogclase tiene un atributo de clase llamado speciescon el valor "Canis familiaris":
+2️⃣ Propiedades / Atributos de clase → Son compartidos por todas las instancias de la clase. Por ejemplo, la siguiente Dogclase tiene un atributo de clase llamado speciescon el valor "Canis familiaris":
 
 ```python
 class Dog:
@@ -205,10 +266,6 @@ class Dog:
 
     def __init__(self, name):
         self.name = name  # Atributo de instancia
-
-Atributo de clase
-class Dog:
-    species = "Canis familiaris"
 
 dog1 = Dog("Buddy")
 dog2 = Dog("Luna")
@@ -225,8 +282,6 @@ print(dog2.name)  # Salida: Luna
 > - 🔵  Un atributo de instancia es único para cada objeto, mientras que un atributo de clase es compartido por todas las instancias.
 > - 🔴 Un atributo de instancia solo puede cambiarse dentro de la clase, mientras que un atributo de clase se modifica solo desde fuera.
 > - 🟢 Los atributos de clase solo existen en Python, mientras que los atributos de instancia existen en todos los lenguajes.
-
-Con static (Puedes acceder a propiedades sin instanciar)
 
 &nbsp;
 
@@ -266,6 +321,13 @@ Se pueden clasificar en distintos tipos:
 
 ```python
 class Example:
+    """
+    Ejemplo de clase que muestra la diferencia entre métodos de instancia, de clase y estáticos.
+
+    Atributos:
+        class_var (str): Variable de clase compartida por todas las instancias.
+        instance_var (any): Variable de instancia, única para cada objeto.
+    """
     class_var = "Class Variable"  # Atributo de clase
     
     def __init__(self, instance_var):
@@ -375,6 +437,12 @@ Simple
 
 ```python
 class Parent:
+    """
+    Clase base que representa un ejemplo de herencia simple.
+
+    Métodos:
+        greet(): Devuelve un saludo. Puede ser heredado o sobrescrito por clases hijas.
+    """
     def greet(self):
         return "Hello from Parent!"  # Método heredado por la clase hija
 
@@ -413,7 +481,39 @@ El Orden de Resolución de Métodos (MRO - Method Resolution Order) es la regla 
 ```python
 print(C.mro()) # [<class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>] mro es un método de clase
 ```
-Investiga super() en python (Cuando: Sobrescribes un método y quieres también el del padre. Inicializas __init__)
+Super() en python (Cuando: Sobrescribes un método y quieres también utiliar del del padre. Inicializas __init__ de la clase padre desde la subclase)
+
+```
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+class Perro(Animal):
+    def __init__(self, nombre, raza):
+        super().__init__(nombre)  # Llama al __init__ de Animal
+        self.raza = raza
+
+p = Perro("Firulais", "Labrador")
+print(p.nombre)  # Firulais
+print(p.raza)    # Labrador
+```
+
+```
+class Padre:
+    def saludar(self):
+        print("Hola desde la clase Padre")
+
+class Hijo(Padre):
+    def saludar(self):
+        super().saludar()  # Llama al método saludar de Padre
+        print("Hola desde la clase Hijo")
+
+h = Hijo()
+h.saludar()
+# Salida:
+# Hola desde la clase Padre
+# Hola desde la clase Hijo
+```
 
 > [!TIP]
 > ¿Qué ocurre si una clase hija no redefine un método de la clase padre?
@@ -440,6 +540,8 @@ Se pueden tratar diferentes objetos de manera uniforme sin condicionales (if o t
  ¿Cómo se logra el polimorfismo en Python?
 
 La manera más estándar y recomendada de implementar polimorfismo en Python es mediante herencia y sobrescritura de métodos en una jerarquía de clases. Esto permite que un mismo método tenga diferentes implementaciones en clases hijas, garantizando la reutilización de código y facilitando la extensibilidad.
+
+🧩 Polimorfismo
 
 ```python
 class Animal:
@@ -520,7 +622,7 @@ Los atributos privados no pueden ser accedidos directamente, pero Python permite
 > [!TIP]
 > ¿Cuál es la principal ventaja del encapsulamiento en Python?
 > - 🔵 Hace que todas las propiedades sean accesibles sin restricciones.
-> - 🔴 Evita que los atributos sean modificados directamente y permite controlar su acceso.
+> - 🔴 Evita que los atributos sean modificados directamente y permite controlar su acceso. !
 > - 🟢 Permite cambiar los nombres de los atributos automáticamente sin afectar el código.
 
 Los getters y setters se usan en programación orientada a objetos para controlar el acceso y la modificación de atributos, en lugar de permitir acceso directo a ellos.
@@ -592,6 +694,7 @@ p.price = 200  # ✅ Se modifica como si fuera un atributo (sin set_price())
 ## 🔹 Composición y asociación
 
 ### 📌 Composición (Un objeto contiene otro y lo controla)
+🧩 Composición (Un objeto contiene otro y lo controla)
 ```python
   class CPU:
       def process(self):
@@ -609,6 +712,7 @@ p.price = 200  # ✅ Se modifica como si fuera un atributo (sin set_price())
 ```
 
 ### 📌 Asociación (Un objeto usa otro)
+🧩 Asociación (Un objeto usa otro)
 ```python
 class Engine:
     def start(self):
@@ -627,32 +731,50 @@ car = Car(engine)
 print(car.start())  # ✅ "Engine started"
 ```
 
+🧩 Abstracción e inyección de dependencias
+
+- Abstracción significa programar contra interfaces o contratos, no contra implementaciones concretas.
+- Permite que el código sea flexible, extensible y fácil de mantener.
+- Facilita el reemplazo de componentes sin afectar el resto del sistema.
+- Es la base de muchos patrones de diseño (Factory, Strategy, Observer, Adapter, etc.) y de los principios SOLID (especialmente el de "Depender de abstracciones, no de implementaciones")
+- Permite que los objetos reciban sus dependencias (colaboradores) desde fuera, en vez de crearlas internamente.
+- Esto reduce el acoplamiento y facilita el testing, la reutilización y la extensión del código.
+
 ```
 from abc import ABC, abstractmethod
 
 # 1. Definimos una abstracción (interfaz). UN CONTRATO
 class PaperType(ABC):
+    """
+    Clase abstracta para tipos de papel.
+    """
     @abstractmethod
-    def get_paper_type(self):
+    def descripcion(self):
         pass
 
 # 2. Implementaciones concretas (Glossy y Matte) dependen de la abstracción
 class GlossyPaper(PaperType):
-    def get_paper_type(self):
-        return "Glossy Paper"
+    """
+    Clase que representa papel brillante.
+    """
+    def descripcion(self):
+        return "Papel brillante"
 
 class MattePaper(PaperType):
-    def get_paper_type(self):
-        return "Matte Paper"
+    """
+    Clase que representa papel mate.
+    """
+    def descripcion(self):
+        return "Papel mate"
 
 #DEPENDE DE LA ABSTRACCIÓN
-# 3. Printer ahora depende de la abstracción, no de implementaciones concretas
+# 3. Printer depende de la abstracción, no de implementaciones concretas
 class Printer:
-    def __init__(self, paper: PaperType):
-        self.paper = paper  # ✅ Dependencia inyectada como abstracción
+    def __init__(self, paper_type):
+        self.paper_type = paper_type
 
     def print_document(self, document: str):
-        print(f"Printing on {self.paper.get_paper_type()}: {document}")
+        print(f"Printing on {self.paper_type.descripcion()}: {document}")
 
 # 4. Uso del código con inyección de dependencias
 glossy_paper = GlossyPaper()
@@ -674,7 +796,7 @@ El objetivo es evitar acoplamiento y para ello es mejor depender de una clase ab
 
 ## 👨‍🎓 Principios SOLID 
 
-Esto acaba de empezar...
+Cómo aplicar bien todos estos conceptos
 
 1. **S**: Una clase debe tener **una sola razón** para cambiar.
 2. **O**: Abierto para extensión, cerrado para modificación.
@@ -699,6 +821,7 @@ La POO en Python es un enfoque poderoso para la organización del código. Compr
 3. Crea una clase de ti mismo/a que herede de Coder, agregando propiedades adicionales que te describan y métodos propios que reflejen tus habilidades o intereses.
 4. Instancia tu propia clase y ejecuta sus métodos para demostrar su funcionalidad.
 5. ¡Compartela!
+
 
 
 
