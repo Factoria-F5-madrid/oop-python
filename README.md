@@ -7,15 +7,16 @@
 ## 🔍 Índice
 
 *   [✨ Introducción](#introduccion)
-*   [🏷️ Clases](#clases)
-*   [📁 Propiedades](#propiedades)
-*   [⚙️ Métodos](#metodos)
-*   [🏛️ Abstracción](#abstraccion)
-*   [👨‍🎓 Herencia](#herencia)
-*   [🎨 Polimorfismo](#polimorfismo)
-*   [🛠️ Encapsulamiento](#encapsulamiento)
-*   [📦 Composición y asociación](#composicio-y-asociacion)
+    *   [🏷️ Clases](#clases)
+    *   [📁 Propiedades](#propiedades)
+    *   [⚙️ Métodos](#metodos)
+*  [🏛️ Pilares de la POO](#pilares-poo)   
+    *   [🏛️ Abstracción](#abstraccion)
+    *   [👨‍🎓 Herencia](#herencia)
+    *   [🎨 Polimorfismo](#polimorfismo)
+    *   [🛠️ Encapsulamiento](#encapsulamiento)
 *   [👨‍🎓 Principios SOLID](#principios-solid)
+*   [📦 Composición y asociación](#composición-y-asociación)
 *   [🎯 Conclusión](#conclusion)
 *   [🛠️ Taller](#taller)
 
@@ -49,12 +50,12 @@ Por debajo tiene C
 
 &nbsp;
 
-## 🏷️ Clases
+### 🏷️ Clases
 
 En Python, una clase es una plantilla para crear objetos. Define las propiedades (atributos) y las acciones (métodos) que los objetos tendrán.
 
 ```python
-class Person: #Los nombres de las clases de Python se escriben en notación CapitalizedWords por convención. 
+class Person: #Los nombres de las clases de Python se escriben en notación CapitalizedWords por convención. Pero si lo haces en mísucula funciona igual
     """
     Clase que representa a una persona con nombre y edad.
     """
@@ -62,8 +63,8 @@ class Person: #Los nombres de las clases de Python se escriben en notación Capi
         self.name = name # Atributo de instancia
         self.age = age # Atributo de instancia
 
-  def introduce(self): #self es la referencia al objeto actual y permite acceder a sus atributos y métodos.
-    return f"Hello, I am {self.name} and I am {self.age} years old."
+    def introduce(self): #self es la referencia al objeto actual y permite acceder a sus atributos y métodos.
+        return f"Hello, I am {self.name} and I am {self.age} years old."
 ```
 
 ```python
@@ -85,7 +86,7 @@ a.age = 10
 
 La mutabilidad afecta el comportamiento de los objetos en Python. 🚀 Por ejemplo, las listas y los diccionarios son mutables, pero las cadenas y las tuplas son inmutables. 
 
-En Python, es una buena práctica documentar tus clases y métodos usando **docstrings** (comentarios entre triple comilla). Esto ayuda a entender rápidamente el propósito de cada clase o función, facilita el mantenimiento y permite que herramientas como `help()`, IDEs y generadores de documentación automática muestren información útil.
+En Python, es una buena práctica documentar tus clases y métodos usando **docstrings** (comentarios entre triple comilla). Esto ayuda a entender rápidamente el propósito de cada clase o función, facilita el mantenimiento y permite que herramientas como `help()`, IDEs y generadores de documentación automática muestren información útil. Ejemplo: `help(Persona)`
 
 Ejemplo de docstring en una clase:
 
@@ -237,7 +238,7 @@ print(p)  # Salida: Persona(nombre='Alice', edad=25)
 
 &nbsp;
 
-## 📁 Propiedades 
+### 📁 Propiedades 
 
 Las propiedades son **datos asociados a un objeto** que definen su estado.
 
@@ -285,7 +286,7 @@ print(dog2.name)  # Salida: Luna
 
 &nbsp;
 
-## ⚙️ Métodos
+### ⚙️ Métodos
 
 Los métodos son funciones dentro de una clase que permiten definir el comportamiento de los objetos. 
 
@@ -411,7 +412,9 @@ print(double(10))  # Salida: 20  (Se comporta como una función) Más convenient
 
 &nbsp;
 
-## 🏛️ Abstracción 
+## 🏛️ Pilares de la POO
+
+### 🏛️ Abstracción 
 
 <kbd><img src="./img/abstraction.jpg" style="border:1px solid grey"></kbd>
 
@@ -429,7 +432,7 @@ La abstracción en programación es el concepto de ocultar los detalles de imple
 
 &nbsp;
 
-## 👨‍🎓 Herencia
+### 👨‍🎓 Herencia
 
 La herencia es un mecanismo que permite crear nuevas clases basadas en otras existentes. Esto facilita la reutilización de código y la creación de jerarquías de clases.
 
@@ -529,7 +532,7 @@ h.saludar()
 
 &nbsp;
 
-## 🎨 Polimorfismo 
+### 🎨 Polimorfismo 
 
 <kbd><img src="./img/polymorphismo.jpg" style="border:1px solid grey"></kbd>
 
@@ -595,7 +598,6 @@ En Python, no existe un sistema de acceso estricto como en Java o C++. En su lug
 | `__@classmethod` | Método      | Clase        | Privado       | ❌ No directamente       | `@classmethod def __metodo(cls):` | Para métodos de clase completamente ocultos. |
 | `@staticmethod` | Método      | Clase        | Público       | ✅ Sí                    | `@staticmethod def metodo():` | Para definir métodos que no dependen de una instancia ni de la clase. |
 
-
 Ejemplo
 
 ```python
@@ -634,7 +636,6 @@ Los getters y setters se usan en programación orientada a objetos para controla
 | ✅ **Control sobre la forma en que se devuelve un dato** | Se puede formatear la salida del getter, por ejemplo, convertir a mayúsculas o aplicar cálculos antes de devolver. | `return self._nombre.upper()` |
 | ✅ **Convertir atributos en "propiedades"**  | Permite cambiar la implementación interna sin afectar a quienes usan la clase.     | `@property` permite acceder sin `get_` y `set_`. |
 | ✅ **Mantener el principio de "encapsulación"** | Oculta la implementación interna y expone solo lo necesario.                         | `self._atributo` (protegido)         |
-
 
 ```python
 class Product:
@@ -691,10 +692,23 @@ p.price = 200  # ✅ Se modifica como si fuera un atributo (sin set_price())
 
 &nbsp;
 
+## 👨‍🎓 Principios SOLID 
+
+Cómo aplicar bien todos estos conceptos
+
+<kbd><img src="https://jorgebenitezlopez.com/tiddlywiki/pro/resumensolid.jpeg" style="border:1px solid grey"></kbd>
+
+
+1. **S**: Una clase debe tener **una sola razón** para cambiar.
+2. **O**: Abierto para extensión, cerrado para modificación. Esto se trabaja la herencia y inyección de dependencias.
+3. **L**: Las subclases deben ser **sustituciones** válidas de sus superclases. Mantener el comportamiento.
+4. **I**: Preferir **interfaces específicas** en lugar de una general. Dividir interfaces. La idea es aplicar todos los métodos de interfaces.
+5. **D**: **Depender de abstracciones**, no de implementaciones concretas.
+
 ## 🔹 Composición y asociación
 
 ### 📌 Composición (Un objeto contiene otro y lo controla)
-🧩 Composición (Un objeto contiene otro y lo controla)
+
 ```python
   class CPU:
       def process(self):
@@ -712,7 +726,7 @@ p.price = 200  # ✅ Se modifica como si fuera un atributo (sin set_price())
 ```
 
 ### 📌 Asociación (Un objeto usa otro)
-🧩 Asociación (Un objeto usa otro)
+
 ```python
 class Engine:
     def start(self):
@@ -731,14 +745,16 @@ car = Car(engine)
 print(car.start())  # ✅ "Engine started"
 ```
 
-🧩 Abstracción e inyección de dependencias
+- 📌 Usamos Asociación cuando los objetos pueden existir de forma independiente.
+- 📌 Usamos Composición cuando un objeto gestiona completamente a otro.
 
-- Abstracción significa programar contra interfaces o contratos, no contra implementaciones concretas.
-- Permite que el código sea flexible, extensible y fácil de mantener.
-- Facilita el reemplazo de componentes sin afectar el resto del sistema.
-- Es la base de muchos patrones de diseño (Factory, Strategy, Observer, Adapter, etc.) y de los principios SOLID (especialmente el de "Depender de abstracciones, no de implementaciones")
-- Permite que los objetos reciban sus dependencias (colaboradores) desde fuera, en vez de crearlas internamente.
-- Esto reduce el acoplamiento y facilita el testing, la reutilización y la extensión del código.
+El objetivo es evitar acoplamiento y para ello es mejor depender de una clase abstracta (interface)...
+
+🧩 Abstracción, inyección de dependencias e inversión de dependencias son la base de muchos patrones de diseño (como Factory, Strategy, Observer, Adapter, etc.) y de los principios SOLID — especialmente del principio de "depender de abstracciones, no de implementaciones".
+
+* Abstracción significa programar contra interfaces o contratos, no contra implementaciones concretas. Esto permite que el código sea más flexible y desacoplado.
+* Inyección de dependencias permite que los objetos reciban sus colaboradores desde el exterior, en lugar de crearlos internamente. Esto reduce el acoplamiento, facilita el testing, mejora la extensibilidad y permite sustituir componentes sin afectar el resto del sistema.
+* Inversión de dependencias (DIP): cuando combinas abstracción + inyección, estás aplicando DIP — siempre que la abstracción esté definida por el módulo de alto nivel. El matiz importante es que DIP no dice simplemente "usa abstracciones", sino que las clases de alto nivel (que contienen lógica de negocio) deben definir los contratos, y las clases concretas (de bajo nivel) deben adaptarse a esas abstracciones.
 
 ```
 from abc import ABC, abstractmethod
@@ -770,7 +786,7 @@ class MattePaper(PaperType):
 #DEPENDE DE LA ABSTRACCIÓN
 # 3. Printer depende de la abstracción, no de implementaciones concretas
 class Printer:
-    def __init__(self, paper_type):
+    def __init__(self, paper_type: PaperType):
         self.paper_type = paper_type
 
     def print_document(self, document: str):
@@ -787,30 +803,13 @@ printer1.print_document("Report for Client A")
 printer2.print_document("Invoice #12345")
 ```
 
-- 📌 Usamos Asociación cuando los objetos pueden existir de forma independiente.
-- 📌 Usamos Composición cuando un objeto gestiona completamente a otro.
-
-El objetivo es evitar acoplamiento y para ello es mejor depender de una clase abstracta (interface)...
-
-&nbsp;
-
-## 👨‍🎓 Principios SOLID 
-
-Cómo aplicar bien todos estos conceptos
-
-1. **S**: Una clase debe tener **una sola razón** para cambiar.
-2. **O**: Abierto para extensión, cerrado para modificación.
-3. **L**: Las subclases deben ser **sustituciones** válidas de sus superclases.
-4. **I**: Preferir **interfaces específicas** en lugar de una general.
-5. **D**: **Depender de abstracciones**, no de implementaciones concretas.
-
-<kbd><img src="./img/meme1.jpg" style="border:1px solid grey"></kbd>
-
 &nbsp;
 
 ## 🎯 Conclusión
 
 La POO en Python es un enfoque poderoso para la organización del código. Comprender sus **principios y patrones** mejora la reutilización, mantenibilidad y escalabilidad de los proyectos. ✨
+
+<kbd><img src="./img/meme1.jpg" style="border:1px solid grey"></kbd>
 
 &nbsp;
 
@@ -820,6 +819,7 @@ La POO en Python es un enfoque poderoso para la organización del código. Compr
 2. Crea una clase Coder que herede de Persona y agrégale propiedades como bootcamp, lenguaje_favorito, y un método programar() que imprima un mensaje indicando que el coder está escribiendo código.
 3. Crea una clase de ti mismo/a que herede de Coder, agregando propiedades adicionales que te describan y métodos propios que reflejen tus habilidades o intereses.
 4. Instancia tu propia clase y ejecuta sus métodos para demostrar su funcionalidad.
+5. Aplica el último principio de SOLID
 5. ¡Compartela!
 
 
