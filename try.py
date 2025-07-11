@@ -1,20 +1,106 @@
 
-class BankAccount:
-    def __init__(self, owner, balance):
-        self.owner = owner  # Público
-        self._balance = balance  # Protegido (convención)
-        self.__password = "secure"  # Privado
+# 1.  Impresora sin inyección y sin abstracción, imprime solo con tipo de papel que dice la clase. Acoplamiendo fuerte
 
-    def get_balance(self):
-        return self._balance
+class GlossyPaper:
+      def description(self):
+            return "Glossy paper"
 
-# Creación de cuenta
-account = BankAccount("Bob", 1000)
+class Printer:
+      def __init__(self):
+            self.paper = GlossyPaper()    # La impresora crea su propio papel (acoplamiento fuerte)
 
-print(account.owner)  # ✅ Público
-print(account._balance)  # ⚠️ Protegido, pero accesible
-# print(account.__password)  # ❌ AttributeError
-print(account._BankAccount__password)  # 🔥 Name Mangling (Evitar su uso)
+      def print_document(self, document: str):
+            print(f"Printing on {self.paper.description()}: {document}")
+
+printer = Printer()
+printer.print_document("Hello, world!")
+
+
+
+
+
+
+
+
+
+
+# 2. Impresora con inyección de dependencias, imprime con tipo de papel que se le pasa
+
+class SimplePaper:
+      def description(self):
+            return "Paper Simple"
+
+class MattePaper:
+    def description(self):
+        return "Papel mate"
+      
+class Printer:
+      def __init__(self, paper): 
+            self.paper = paper
+            
+      def print_document(self, document):
+            print(f"Printing on {self.paper.description()}: {document}")
+            
+simple = Printer(SimplePaper())
+simple.print_document("Hello, world!")
+
+matte = Printer(MattePaper())
+matte.print_document("Hello, world!")
+
+#3. Impresora con abstracción e inyección, imprime con tipo de papel que se le pasa. Además inversión de dependencias, la clase grande depende de una clase abstracta.
+
+from abc import ABC, abstractmethod
+
+class PaperType(ABC):
+    @abstractmethod
+    def descripcion(self):
+        pass
+
+class GlossyPaper(PaperType):
+    def descripcion(self):
+        return "Papel brillante"
+
+class MattePaper(PaperType):
+    def descripcion(self):
+        return "Papel mate"
+
+class Printer:
+    def __init__(self, paper_type: PaperType):
+        self.paper_type = paper_type
+
+    def print_document(self, document):
+        print(f"Imprimiendo en {self.paper_type.descripcion()}: {document}")
+
+# Inyección de dependencias
+printer1 = Printer(GlossyPaper())
+printer2 = Printer(MattePaper())
+
+printer1.print_document("Factura 006")
+printer2.print_document("Factura 007")
+            
+
+
+
+
+
+
+
+# class BankAccount:
+#     def __init__(self, owner, balance):
+#         self.owner = owner  # Público
+#         self._balance = balance  # Protegido (convención)
+#         self.__password = "secure"  # Privado
+
+#     def get_balance(self):
+#         return self._balance
+
+# # Creación de cuenta
+# account = BankAccount("Bob", 1000)
+
+# print(account.owner)  # ✅ Público
+# print(account._balance)  # ⚠️ Protegido, pero accesible
+# # print(account.__password)  # ❌ AttributeError
+# print(account._BankAccount__password)  # 🔥 Name Mangling (Evitar su uso)
 
 
 
